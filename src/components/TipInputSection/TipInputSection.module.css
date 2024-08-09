@@ -1,0 +1,22 @@
+/* Styles forTipInputSectioncomponent */
+.inputsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 473px;
+  padding: 10px;
+}
+
+@media (max-width: 1100px) {
+  .inputsContainer {
+    width: 100%;
+    padding: 32px;
+  }
+}
+
+@media (max-width: 550px) {
+  .inputsContainer {
+    gap: 10px;
+    padding: 0;
+  }
+}

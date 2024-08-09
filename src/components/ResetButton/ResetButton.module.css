@@ -1,0 +1,27 @@
+.resetBtn {
+  background-color: #2cc0ad;
+  color: #00474b;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 46px;
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+.resetBtn:disabled {
+  background-color: #0d686d;
+}
+
+@media (max-width: 1100px) {
+  .resetBtn {
+    padding: 9px 46px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .resetBtn {
+    padding: 9px 46px;
+    font-size: 1rem;
+  }
+}

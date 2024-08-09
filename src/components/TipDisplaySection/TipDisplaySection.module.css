@@ -1,0 +1,25 @@
+/* Styles forTipDisplaySectioncomponent */
+.displayContainer {
+  background-color: #00474b;
+  padding: 56px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  align-items: stretch;
+  height: 100%;
+}
+
+@media (max-width: 1100px) {
+  .displayContainer {
+    padding: 32px;
+  }
+}
+
+@media (max-width: 550px) {
+  .displayContainer {
+    gap: 32px;
+    padding: 16px;
+  }
+}

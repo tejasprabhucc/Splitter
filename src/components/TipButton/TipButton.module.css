@@ -1,0 +1,75 @@
+.tipBtn,
+.customBtn {
+  background-color: #00474b;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-size: 1.5rem;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+}
+
+.customBtn {
+  background-color: #f3f8fb;
+  color: #00474b;
+  outline: none;
+  border: 2px solid transparent;
+  overflow: hidden;
+}
+
+.tipBtn:focus,
+.tipBtn:active {
+  background-color: #26c2ad;
+}
+
+.selected {
+  background-color: #26c2ad;
+}
+
+.inputContainer {
+  width: 100%;
+  display: flex;
+}
+
+.customInput {
+  width: 100%;
+  padding: 6px 20px;
+  font-size: 1.5rem;
+  background-color: #f3f8fb;
+  color: #00474b;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  box-sizing: border-box;
+  text-align: center;
+  outline: none;
+}
+
+.customInput:focus {
+  border-color: #00474b;
+}
+
+.error {
+  border-color: #dc2f02;
+}
+.error:focus {
+  border-color: #dc2f02;
+}
+
+@media (max-width: 1100px) {
+  .tipBtn,
+  .customBtn,
+  .customInput {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .tipBtn,
+  .customBtn,
+  .customInput {
+    font-size: 1rem;
+  }
+}
