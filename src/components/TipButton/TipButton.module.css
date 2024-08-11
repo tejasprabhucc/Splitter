@@ -6,6 +6,7 @@
   border-radius: 6px;
   padding: 8px 20px;
   font-size: 1.5rem;
+  line-height: 1.5;
   width: 100%;
   text-align: center;
   box-sizing: border-box;
@@ -63,6 +64,7 @@
   .customBtn,
   .customInput {
     font-size: 1.25rem;
+    padding: 8px 0px;
   }
 }
 
