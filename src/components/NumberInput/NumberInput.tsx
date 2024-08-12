@@ -1,7 +1,7 @@
-import styles from "./NumberInput.module.css";
-import "../../App.css";
 import person from "../../assets/User.svg";
 import dollar from "../../assets/dollar.svg";
+import { useId } from "react";
+import clsx from "clsx";
 
 export interface NumberInputProps {
   // extends React.ComponentPropsWithoutRef<"input">
@@ -43,12 +43,28 @@ const NumberInput = ({
     onChange(e.target.value);
   };
 
+  const numberInputId = useId();
+
   return (
-    <div className={styles.container}>
-      <label htmlFor="number-input" className={styles.label}>
+    // Container for number input including lable and input
+    <div className="flex flex-col items-start gap-2.5 w-full box-border font-space-mono">
+      {/* Lable for number input  */}
+      <label
+        htmlFor="number-input"
+        className="text-lg font-bold font-space-mono md:text-base sm:text-sm "
+      >
         {label}
       </label>
-      <div className={`${styles.inputField} ${isError ? styles.error : ""}`}>
+
+      {/* Number input container with icon and input tag */}
+      <div
+        className={clsx(
+          "flex items-center justify-between bg-[#f3f8fb] font-bold px-5 py-2 rounded-md w-full border-2 ",
+          isError
+            ? "border-error focus-within:border-error"
+            : "border-transparent focus-within:border-green"
+        )}
+      >
         <span>
           {typeofIcon === "person" ? (
             <img src={person} alt="Person Icon" />
@@ -58,14 +74,17 @@ const NumberInput = ({
         </span>
         <input
           type="number"
-          id="number-input"
-          className={styles.numberInput}
+          id={numberInputId}
+          className="bg-transparent text-green border-none text-2xl leading-normal font-bold text-right outline-none w-full md:text-2xl sm:text-base no-arrows"
           value={value}
           onChange={handleInputChange}
         />
       </div>
 
-      <p className={styles.error_message}>{isError ? `${errorMessage}` : ""}</p>
+      {/* Error display for invalid inputs  */}
+      <p className="text-error text-base font-bold min-h-[1.5rem] -mt-1 sm:text-sm">
+        {isError ? `${errorMessage}` : ""}
+      </p>
     </div>
   );
 };
