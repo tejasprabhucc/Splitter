@@ -1,4 +1,3 @@
-import styles from "./TipInputSection.module.css";
 import NumberInput from "../NumberInput/NumberInput";
 import TipSelect from "../TipSelect/TipSelect";
 
@@ -26,7 +25,8 @@ const TipInputSection = ({
     isNaN(Number(numberOfPeople)) || Number(numberOfPeople) <= 0;
 
   return (
-    <div className={styles.inputsContainer}>
+    // Container for input section
+    <div className="flex flex-col p-4 w-full gap-3 sm:p-0 font-space-mono">
       <NumberInput
         label="Bill"
         typeofIcon="dollar"

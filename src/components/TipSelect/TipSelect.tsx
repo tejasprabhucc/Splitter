@@ -1,6 +1,5 @@
 import { useState } from "react";
 import TipButton from "../TipButton/TipButton";
-import styles from "./TipSelect.module.css";
 
 export interface TipSelectProps {
   selectedTip: number;
@@ -28,12 +27,13 @@ const TipSelect = ({
     }
   };
 
-  // const isCustomTipActive = (selectedTip === 0)
-
   return (
-    <div className={styles.container}>
-      <p className={styles.title}>Select Tip %</p>
-      <div className={styles.btnGrid}>
+    // Main container for tip select component
+    <div className="flex flex-col space-y-3 w-full">
+      <p className="text-xl font-bold text-left">Select Tip %</p>
+
+      {/* Grid conatiner for tip buttons  */}
+      <div className="grid grid-cols-3 gap-4">
         {tipValues.map((value) => (
           <TipButton
             key={value}
@@ -48,7 +48,8 @@ const TipSelect = ({
         ))}
       </div>
 
-      <div className={styles.error_message}>
+      {/* Error display for invalid custom tip input  */}
+      <div className="text-error text-base font-bold min-h-[1.5rem] -mt-1 sm:text-sm">
         <p>
           {selectedTip < 0 || isNaN(selectedTip)
             ? "Custom tip must be a positive number"

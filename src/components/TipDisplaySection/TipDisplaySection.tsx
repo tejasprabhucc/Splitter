@@ -1,9 +1,7 @@
-import styles from "./TipDisplaySection.module.css";
 import AmountDisplay from "../AmountDisplay/AmountDisplay";
 import ResetButton from "../ResetButton/ResetButton";
 
 export interface TipDisplaySectionProps {
-  // Define your props here
   totalValues: {
     calculatedTip: number | string;
     calculatedTotal: number | string;
@@ -18,8 +16,9 @@ const TipDisplaySection = ({
   resetEnabled,
 }: TipDisplaySectionProps) => {
   return (
-    <div className={styles.displayContainer}>
-      <div className={styles.amountDisplay}>
+    // Container for amount display section
+    <div className="flex flex-col justify-between w-full h-full rounded-2xl bg-green p-10 md:p-8 sm:p-4">
+      <div>
         <AmountDisplay label="Total Tip" value={totalValues.calculatedTip} />
         <AmountDisplay label="Total" value={totalValues.calculatedTotal} />
       </div>

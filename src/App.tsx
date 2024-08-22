@@ -1,5 +1,4 @@
 import { useReducer } from "react";
-import "./App.css";
 
 import TipInputSection from "./components/TipInputSection/TipInputSection";
 import TipDisplaySection from "./components/TipDisplaySection/TipDisplaySection";
@@ -77,12 +76,15 @@ function App() {
   }
 
   return (
-    <div className="tipCalc-container">
-      <div className="tipCalc_heading">
+    <div className="flex flex-col items-center justify-center bg-[#c5e4e7] min-h-screen w-full">
+      {/* Title of the page  */}
+      <div className="flex flex-col items-center justify-center text-3xl font-bold tracking-[1rem] mt-5 font-space-mono">
         <span>SPLI</span>
         <span>TTER</span>
       </div>
-      <div className="tipCalc">
+
+      {/* Main container for tip calculator */}
+      <div className="bg-white rounded-[35px] m-7 p-5 grid grid-cols-2 items-center justify-center gap-[66px] max-w-[1100px] w-full font-space-mono sm:grid-cols-1 sm:gap-[16px]">
         <TipInputSection
           billAmount={state.billAmount}
           handleBillChange={handleBillChange}
